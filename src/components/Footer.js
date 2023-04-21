@@ -7,18 +7,18 @@ function Footer() {
         <footer>
             <img src={logo} alt='little lemon logo' />
             <div>
-                <h3>Navigation</h3>
+                <h4>Navigation</h4>
                 <p>Home</p>
                 <p>About</p>
             </div>
             <div>
-                <h3>Contact</h3>
+                <h4>Contact</h4>
                 <p>Adress</p>
                 <p>Phone number</p>
                 <p>Email</p>
             </div>
             <div>
-            <h3>Social media</h3>
+            <h4>Social media</h4>
                 <p>Instagram</p>
                 <p>Facebook</p>
             </div>

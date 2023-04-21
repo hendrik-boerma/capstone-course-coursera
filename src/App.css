@@ -1,29 +1,91 @@
 nav {
-    background-color: #EFEFEF;
-    padding: 32px;
+    margin: 0% 5%;
+    background-color: #FFFFFF;
+    padding: 32px 0px;
     gap: 64px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 nav ul {
-    padding: 0;
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 0;
+    margin: 0;
 }
 
 li a{
     text-decoration: none;
     color: #495E57;
+    font-size: 16px;
     font-weight: 600;
+}
+
+#hamburger {
+    max-width: 80px;
+    padding: 16px;
+    display: none;
+    background-color: #495E57;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: 4px;
 }
 
 header {
     background-color: #495E57;
     color: #EFEFEF;
-    height: 400px;
-    display: flex;
-    justify-content: center;
+    height: 500px;
+    display: grid;
+    grid-template-areas: 'whitespace whitespace article image ';
     align-items: center;
+    justify-content: space-between;
+}
+
+header article {
+    grid-area: article;
+    padding: 32px;
+    max-width: 400px;
+}
+
+header img {
+    grid-area: image;
+    width:100%;
+    height:100%;
+    max-height: 500px;
+    object-fit:cover;
+}
+
+h1 {
+    color: #F4CE14;
+    font-size: 64px;
+    font-family:'Times New Roman', Times, serif ;
+    font-weight: 600;
+    margin: 0;
+}
+
+h2 {
+    font-size: 36px;
+    color:#333333;
+}
+
+h3 {
+    color:#EFEFEF;
+}
+
+.button {
+    background-color: #F4CE14;
+    color: #333333;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 main {
@@ -34,18 +96,41 @@ main {
 }
 
 footer {
-    padding: 64px 64px;
+    padding: 64px 44px;
     background-color: #EFEFEF;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
     nav {
         flex-direction: column;
+        align-items: normal;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .navheader {
+        display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    header {
+        grid-template-areas: 'image' 'article';
+        height: auto;
+    }
+
+    h1 {
+        font-size: 42px;
     }
 
     footer {

@@ -4,7 +4,7 @@ function Main() {
     return(
         <>
         <main>
-            <h1>Main</h1>
+            <h2>Main</h2>
         </main>
         </>
     );
