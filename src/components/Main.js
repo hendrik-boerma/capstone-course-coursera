@@ -9,7 +9,7 @@ function Main() {
         <main>
             <div className="title">
             <h2>Specials</h2>
-            <button className='button'>Online Menu</button>
+            <a  href='/orderonline' className='button'>Online Menu</a>
             </div>
             <div className="cardcontainer">
                 <div className="card">
@@ -18,7 +18,7 @@ function Main() {
                         <h4 className='cardtitle' >Salad</h4>
                         <p className="cardprice">$ 13</p>
                         <p className="cardtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <a href='/home' className="cardlink">Order a delivery &gt;</a>
+                        <a href='/orderonline' className="cardlink">Order a delivery &gt;</a>
                     </div>
                 </div>
                 <div className="card">
@@ -27,7 +27,7 @@ function Main() {
                         <h4 className='cardtitle' >Bruchetta</h4>
                         <p className="cardprice">$ 8</p>
                         <p className="cardtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <a href='/home' className="cardlink">Order a delivery &gt;</a>
+                        <a href='/orderonline' className="cardlink">Order a delivery &gt;</a>
                     </div>
                 </div>
                 <div className="card">
@@ -36,7 +36,7 @@ function Main() {
                         <h4 className='cardtitle' >Lemon Dessert</h4>
                         <p className="cardprice">$ 7</p>
                         <p className="cardtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                        <a href='/home' className="cardlink">Order a delivery &gt;</a>
+                        <a href='/orderonline' className="cardlink">Order a delivery &gt;</a>
                     </div>
                 </div>
             </div>

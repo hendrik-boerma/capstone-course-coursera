@@ -153,6 +153,7 @@ h3 {
 
 .button {
     background-color: #F4CE14;
+    text-decoration: none;
     color: #333333;
     padding: 16px 30px;
     border: none;

@@ -1,8 +1,12 @@
 import './App.css';
 import logo from './images/Logo.svg'
-import Home from './components/Home';
 import { Routes, Route, Link } from "react-router-dom";
-import About from './components/About';
+import Home from './pages/Home';
+import About from './pages/About';
+import Menu from './pages/Menu';
+import Login from './pages/Login';
+import Reservations from './pages/Reservations';
+import Orderonline from './pages/Order online';
 
 function App() {
 
@@ -14,7 +18,7 @@ function App() {
     <nav>
       <div className='navheader'>
             <button id='hamburger' onClick={openMenu}>Menu</button>
-            <img src={logo} id='navlogo' alt="little lemon logo" />
+            <a href="/"><img src={logo} id='navlogo' alt="little lemon logo" /></a>
             </div>
       <div className='navlist'>
         <Link to="/" className="nav-item">HOME</Link>
@@ -25,9 +29,14 @@ function App() {
         <Link to="/account" className="nav-item">LOGIN</Link>
       </div>
     </nav>
+
       <Routes>
-      <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/menu" element={<Menu />}></Route>
+        <Route path="/reservations" element={<Reservations />}></Route>
+        <Route path="/orderonline" element={<Orderonline />}></Route>
+        <Route path="/account" element={<Login />}></Route>
       </Routes>
     </>
   );
