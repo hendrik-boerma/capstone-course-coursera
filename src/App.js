@@ -12,7 +12,13 @@ import Footer from './components/Footer';
 
 function App() {
 
-  function openMenu() {
+  function openMenu () {
+    const menu = document.getElementById('openmenu')
+    if (menu.style.display === 'none') {
+      menu.style.display = 'flex'
+    } else {
+      menu.style.display = 'none'
+    }
   }
 
   return (
@@ -22,7 +28,7 @@ function App() {
             <button id='hamburger' onClick={openMenu}>Menu</button>
             <a href="/"><img src={logo} id='navlogo' alt="little lemon logo" /></a>
             </div>
-      <div className='navlist'>
+      <div id='openmenu' className='navlist'>
         <Link to="/" className="nav-item">HOME</Link>
         <Link to="/about" className="nav-item">ABOUT</Link>
         <Link to="/menu" className="nav-item">MENU</Link>

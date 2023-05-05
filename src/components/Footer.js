@@ -7,7 +7,6 @@ function Footer() {
         <footer>
             <div className='container'>
             <a href='/'><img src={logo} alt='little lemon logo' /></a>
-            
             <div>
                 <h4>Contact</h4>
                 <p>Adress</p>
