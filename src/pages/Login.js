@@ -1,10 +1,10 @@
-import Footer from "../components/Footer";
-
 function Login () {
 
     return(
         <>
-        <h1>Login</h1>
+        <main>
+        <h1>hello world</h1>
+        </main>
         </>
     );
 }

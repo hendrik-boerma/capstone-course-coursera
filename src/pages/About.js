@@ -1,10 +1,11 @@
-import Footer from "../components/Footer";
 
 function About () {
 
     return(
         <>
-        <h1>About</h1>
+        <main>
+        <h1>hello world</h1>
+        </main>
         </>
     );
 }

@@ -1,10 +1,10 @@
-import Footer from "../components/Footer";
-
 function Reservations () {
 
     return(
         <>
-        <h1>Reservations</h1>
+        <main>
+        <h1>hello world</h1>
+        </main>
         </>
     );
 }

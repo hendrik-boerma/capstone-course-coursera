@@ -1,10 +1,10 @@
-import Footer from "../components/Footer";
-
 function Menu () {
 
     return(
         <>
-        <h1>Menu</h1>
+        <main>
+        <h1>hello world</h1>
+        </main>
         </>
     );
 }

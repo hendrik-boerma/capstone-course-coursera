@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function BookingForm () {
 
-    const [availableTimes, setAvailableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'])
+    const [availableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'])
     const [inputValue, setInputValue] = useState({
         name: '',
         date: '',
@@ -19,8 +19,8 @@ function BookingForm () {
         });
     }
     const handleSubmit = event => {
-        alert(`Thank you for your reservation ${inputValue.name} ! \n\n Date: ${inputValue.date} \n Time: ${inputValue.time} \n Guests: ${inputValue.guests}`)
-        setAvailableTimes(0)
+        alert(`Thank you for your reservation ${inputValue.name}! \n\n Date: ${inputValue.date} \n Time: ${inputValue.time} \n Guests: ${inputValue.guests}`)
+        setInputValue({name: 'Enjoy your reservation!'})
         event.preventDefault();
       }
 
@@ -30,7 +30,7 @@ function BookingForm () {
             <label htmlFor="res-name">Name</label>
             <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-date" >Choose date</label>
-            <input type="date" id="res-date" name='date' value={inputValue.date} onChange={handleChange} required/>
+            <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" name='time' value={inputValue.time} onChange={handleChange} required>
                 <option hidden selected></option>

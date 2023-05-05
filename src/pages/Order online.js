@@ -1,10 +1,10 @@
-import Footer from "../components/Footer";
-
 function Orderonline () {
 
     return(
         <>
-        <h1>Order Online</h1>
+        <main>
+        <h1>hello world</h1>
+        </main>
         </>
     );
 }
