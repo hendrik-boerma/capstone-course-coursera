@@ -5,7 +5,6 @@ function Reservations () {
     return(
         <>
         <h1>Reservations</h1>
-        <Footer />
         </>
     );
 }
