@@ -1,12 +1,12 @@
 import Header from '../components/Header'
-import Homecontent from '../components/Homecontent'
+import SpecialCards from '../components/SpecialCards'
 
 function Home () {
 
     return(
         <>
         <Header />
-        <Homecontent />
+        <SpecialCards />
         </>
     );
 }

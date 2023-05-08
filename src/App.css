@@ -192,6 +192,11 @@ form input.button {
     margin-top: 5%;
 }
 
+#confirmation {
+    display: none;
+    flex-direction: column;
+}
+
 footer {
     padding: 64px 0px;
     display: flex;

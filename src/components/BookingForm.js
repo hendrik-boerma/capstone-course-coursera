@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 function BookingForm () {
+    
+        let times = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
+        let guests = ['1','2','3','4','5','6','7','8'];
 
-    const [availableTimes] = useState(['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'])
     const [inputValue, setInputValue] = useState({
         name: '',
         date: '',
@@ -19,14 +21,18 @@ function BookingForm () {
         });
     }
     const handleSubmit = event => {
-        alert(`Thank you for your reservation ${inputValue.name}! \n\n Date: ${inputValue.date} \n Time: ${inputValue.time} \n Guests: ${inputValue.guests}`)
-        setInputValue({name: 'Enjoy your reservation!'})
+        document.getElementById('confirmation').style.display = 'flex';
+        document.getElementById('form').style.display = 'none'
         event.preventDefault();
       }
 
     return (
         <main>
-        <form onSubmit={handleSubmit}>
+        <div id="confirmation">
+            <h2 >Thank you for your reservation {inputValue.name}!</h2>
+            <p>Date: {inputValue.date} <br/> Time: {inputValue.time} <br/> Guests: {inputValue.guests}</p>
+        </div>
+        <form id="form" onSubmit={handleSubmit}>
             <label htmlFor="res-name">Name</label>
             <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-date" >Choose date</label>
@@ -34,26 +40,16 @@ function BookingForm () {
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" name='time' value={inputValue.time} onChange={handleChange} required>
                 <option hidden selected></option>
-                <option>{availableTimes[0]}</option>
-                <option>{availableTimes[1]}</option>
-                <option>{availableTimes[2]}</option>
-                <option>{availableTimes[3]}</option>
-                <option>{availableTimes[4]}</option>
-                <option>{availableTimes[5]}</option>
-                <option>{availableTimes[6]}</option>
-                <option>{availableTimes[7]}</option>
+                {times.map(time => (
+                <option>{time}</option>
+                ))}
             </select>
             <label htmlFor="res-guests">Number of guests</label>
             <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange} required>
                 <option hidden selected></option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
+                {guests.map(guest => (
+                    <option>{guest}</option>
+                ))}
             </select>
             <input class='button' type="submit" value="Book" />
         </form>
