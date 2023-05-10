@@ -30,11 +30,17 @@ function BookingForm () {
         <main>
         <div id="confirmation">
             <h2 >Thank you for your reservation {inputValue.name}!</h2>
-            <p>Date: {inputValue.date} <br/> Time: {inputValue.time} <br/> Guests: {inputValue.guests}</p>
+            <p>
+                <span>Date: {inputValue.date}</span>
+                <span>Time: {inputValue.time}</span>
+                <span>Guests: {inputValue.guests}</span>
+            </p>
         </div>
         <form id="form" onSubmit={handleSubmit}>
             <label htmlFor="res-name">Name</label>
             <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
+            <label htmlFor="res-mail">E-mail</label>
+            <input type="email" id="res-mail" name='mail' onChange={handleChange} required />
             <label htmlFor="res-date" >Choose date</label>
             <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
             <label htmlFor="res-time">Choose time</label>

@@ -1,6 +1,5 @@
 import './App.css';
-import logo from './images/Logo.svg'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Menu from './pages/Menu';
@@ -9,47 +8,23 @@ import Reservations from './pages/Reservations';
 import Orderonline from './pages/Order online';
 import BookingPage from './pages/BookingPage';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 function App() {
 
-  function openMenu () {
-    const menu = document.getElementById('openmenu')
-    if (menu.style.display === 'none') {
-      menu.style.display = 'flex'
-    } else {
-      menu.style.display = 'none'
-    }
-  }
-
   return (
     <>
-    <nav>
-      <div className='navheader'>
-            <button id='hamburger' onClick={openMenu}>Menu</button>
-            <a href="/"><img src={logo} id='navlogo' alt="little lemon logo" /></a>
-            </div>
-      <div id='openmenu' className='navlist'>
-        <Link to="/" className="nav-item">HOME</Link>
-        <Link to="/about" className="nav-item">ABOUT</Link>
-        <Link to="/menu" className="nav-item">MENU</Link>
-        <Link to="/reservations" className="nav-item">RESERVATIONS</Link>
-        <Link to="/booking" className="nav-item">BOOK</Link>
-        <Link to="/orderonline" className="nav-item">ORDER ONLINE</Link>
-        <Link to="/account" className="nav-item">LOGIN</Link>
-      </div>
-    </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/reservations" element={<Reservations />}></Route>
-        <Route path="/orderonline" element={<Orderonline />}></Route>
-        <Route path="/account" element={<Login />}></Route>
-        <Route path="/booking" element={<BookingPage/>}></Route>
-      </Routes>
-
-      <Footer />
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/about" element={<About />}></Route>
+      <Route path="/menu" element={<Menu />}></Route>
+      <Route path="/reservations" element={<Reservations />}></Route>
+      <Route path="/orderonline" element={<Orderonline />}></Route>
+      <Route path="/account" element={<Login />}></Route>
+      <Route path="/booking" element={<BookingPage/>}></Route>
+    </Routes>
+    <Footer />
     </>
   );
 }

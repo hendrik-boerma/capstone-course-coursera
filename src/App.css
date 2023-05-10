@@ -10,6 +10,15 @@ nav {
     flex-wrap: wrap;
 }
 
+.navlist-mobile {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 0;
+    margin: 0;
+}
+
 .navlist {
     list-style-type: none;
     display: flex;
@@ -197,6 +206,14 @@ form input.button {
     flex-direction: column;
 }
 
+#confirmation p{
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+}
+
 footer {
     padding: 64px 0px;
     display: flex;
@@ -222,8 +239,16 @@ footer .container {
     }
 
     .navlist {
-        flex-direction: column;
         display: none;
+    }
+
+    .navlist-mobile {
+        list-style-type: none;
+        gap: 32px;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        display: flex;
         transition: 0.3s ease-in-out;
     }
 
