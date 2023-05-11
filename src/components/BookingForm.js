@@ -31,9 +31,9 @@ function BookingForm () {
         <div id="confirmation">
             <h2 >Thank you for your reservation {inputValue.name}!</h2>
             <p>
-                <span>Date: {inputValue.date}</span>
-                <span>Time: {inputValue.time}</span>
-                <span>Guests: {inputValue.guests}</span>
+                <span>Date: <br/>{inputValue.date}</span>
+                <span>Time: <br/>{inputValue.time}</span>
+                <span>Guests: <br/>{inputValue.guests}</span>
             </p>
         </div>
         <form id="form" onSubmit={handleSubmit}>

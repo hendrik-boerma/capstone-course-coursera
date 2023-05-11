@@ -1,13 +1,15 @@
 nav {
-    margin: 0% 5%;
     background-color: #FFFFFF;
     padding: 32px 0px;
-    gap: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.navheader {
+    padding: 0px 32px;
 }
 
 .navlist-mobile {
@@ -155,7 +157,7 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 24px;
     margin: 0;
     color:#333333;
 }
@@ -185,7 +187,6 @@ form {
     max-width: 400px;
     gap: 16px;
     align-items: right;
-    padding: 5%;
 }
 
 input, select {
@@ -203,15 +204,17 @@ form input.button {
 
 #confirmation {
     display: none;
+    padding: 64px 0px;
+    max-width: 350px;
     flex-direction: column;
 }
 
 #confirmation p{
-    padding: 24px;
+    padding: 24px 0px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 24px;
+    justify-content: left;
+    gap: 64px;
 }
 
 footer {
@@ -238,18 +241,26 @@ footer .container {
         padding: 16px 0px;
     }
 
+    .navheader {
+        padding: 0px 16px;
+    }
+
     .navlist {
         display: none;
     }
 
     .navlist-mobile {
+        position: absolute;
+        margin-top: 76px;
         list-style-type: none;
         gap: 32px;
-        padding: 0;
-        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 32px 16px;
         flex-direction: column;
         display: flex;
-        transition: 0.3s ease-in-out;
+        top: 0px;
+        background-color: #FFFFFF;
     }
 
     .navheader {

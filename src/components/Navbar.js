@@ -9,7 +9,7 @@ function Navbar () {
     return (
         <nav>
       <div className='navheader'>
-            <button id='hamburger' onClick={() => setToggleMenu(!toggleMenu)} >Menu</button>
+            <button id='hamburger' onClick={() => setToggleMenu(!toggleMenu)} >{toggleMenu ? "Close" : "Menu"}</button>
             <a href="/"><img src={logo} id='navlogo' alt="little lemon logo" /></a>
         </div>
       <ul id='openmenu' className={toggleMenu ? "navlist-mobile" : "navlist"} onClick={() => setToggleMenu(false)}>
@@ -18,8 +18,6 @@ function Navbar () {
         <Link to="/menu" className="nav-item">MENU</Link>
         <Link to="/reservations" className="nav-item">RESERVATIONS</Link>
         <Link to="/booking" className="nav-item">BOOK</Link>
-        <Link to="/orderonline" className="nav-item">ORDER ONLINE</Link>
-        <Link to="/account" className="nav-item">LOGIN</Link>
       </ul>
     </nav>
     );
