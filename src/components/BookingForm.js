@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-function BookingForm () {
-    
-        let times = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
+function BookingForm ({times, dispatch}) {
+
         let guests = ['1','2','3','4','5','6','7','8'];
 
     const [inputValue, setInputValue] = useState({
@@ -26,6 +25,11 @@ function BookingForm () {
         event.preventDefault();
       }
 
+    function dateChange (event) {
+        handleChange(event);
+        dispatch({type: 'date_change'});
+    }
+
     return (
         <main>
         <div id="confirmation">
@@ -37,21 +41,22 @@ function BookingForm () {
             </p>
         </div>
         <form id="form" onSubmit={handleSubmit}>
+            <h2>Make reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-mail">E-mail</label>
             <input type="email" id="res-mail" name='mail' onChange={handleChange} required />
             <label htmlFor="res-date" >Choose date</label>
-            <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
+            <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={dateChange} required/>
             <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" name='time' value={inputValue.time} onChange={handleChange} required>
+            <select id="res-time" name='time' data-testid="timeoptions" value={inputValue.time} onChange={handleChange} required>
                 <option hidden selected></option>
-                {times.map(time => (
-                <option>{time}</option>
+                {times?.map(time => (
+                    <option>{time}</option>
                 ))}
             </select>
             <label htmlFor="res-guests">Number of guests</label>
-            <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange} required>
+            <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange}  required>
                 <option hidden selected></option>
                 {guests.map(guest => (
                     <option>{guest}</option>
