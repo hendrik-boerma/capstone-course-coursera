@@ -2,7 +2,8 @@ import { useState, useReducer } from "react";
 
 function BookingForm () {
 
-    const initializeTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
+    let guests = ['','1','2','3','4','5','6','7','8'];
+
     const [inputValue, setInputValue] = useState({
         name: '',
         date: '',
@@ -11,26 +12,20 @@ function BookingForm () {
     }
     )
 
-    const updateTimes = (times, action, callback) => {
-        if (action.type === "2023-05-01")  return ['17:00', '17:30', '18:00']
-        if (action.type ===! "2023-05-01")  return initializeTimes;
-        console.log(inputValue.date);
-        return times
+    const initializeTimes = ['', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
+
+    const updateTimes = (times, action) => {
+        if (action.type === "2023-05-01") {
+            return ['', '17:00', '17:30', '18:00']
+        }
+        else {
+            return initializeTimes;
+        }
     }
 
     const [times, dispatch] = useReducer(updateTimes, initializeTimes);
 
-    let guests = ['1','2','3','4','5','6','7','8'];
-
     const handleChange = event => {
-        const value = event.target.value;
-        setInputValue({
-            ...inputValue,
-            [event.target.name]: value
-        });
-    }
-
-    function dateChange (event) {
         const value = event.target.value;
         setInputValue({
             ...inputValue,
@@ -62,22 +57,20 @@ function BookingForm () {
             <label htmlFor="res-mail">E-mail</label>
             <input type="email" id="res-mail" name='mail' onChange={handleChange} required />
             <label htmlFor="res-date" >Choose date</label>
-            <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={dateChange} required/>
+            <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" name='time' data-testid="timeoptions" value={inputValue.time} onChange={handleChange} required>
-                <option hidden selected></option>
-                {times?.map(time => (
-                    <option>{time}</option>
-                ))}
+                {times.map(time => (
+                        <option key={time}>{time}</option>
+                    ))}
             </select>
             <label htmlFor="res-guests">Number of guests</label>
             <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange}  required>
-                <option hidden selected></option>
                 {guests.map(guest => (
-                    <option>{guest}</option>
+                    <option key={guest}>{guest}</option>
                 ))}
             </select>
-            <input class='button' type="submit" value="Book" />
+            <input className='button' type="submit" value="Book" />
         </form>
         </main>
     );

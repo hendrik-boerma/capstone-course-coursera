@@ -34,7 +34,7 @@ function SpecialCards() {
                 </div>
                 <div className="cardcontainer">
                     {dishes.map( dish => (
-                        <div className="card">
+                        <div className="card" key={dish.name}>
                         <img className='cardimage' src={dish.picture} alt={dish.name} />
                         <div>
                             <h4 className='cardtitle' >{dish.name}</h4>
