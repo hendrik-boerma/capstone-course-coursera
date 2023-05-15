@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 
-function BookingForm ({times, dispatch}) {
+function BookingForm () {
 
-        let guests = ['1','2','3','4','5','6','7','8'];
-
+    const initializeTimes = ['17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
     const [inputValue, setInputValue] = useState({
         name: '',
         date: '',
@@ -12,6 +11,17 @@ function BookingForm ({times, dispatch}) {
     }
     )
 
+    const updateTimes = (times, action, callback) => {
+        if (action.type === "2023-05-01")  return ['17:00', '17:30', '18:00']
+        if (action.type ===! "2023-05-01")  return initializeTimes;
+        console.log(inputValue.date);
+        return times
+    }
+
+    const [times, dispatch] = useReducer(updateTimes, initializeTimes);
+
+    let guests = ['1','2','3','4','5','6','7','8'];
+
     const handleChange = event => {
         const value = event.target.value;
         setInputValue({
@@ -19,16 +29,21 @@ function BookingForm ({times, dispatch}) {
             [event.target.name]: value
         });
     }
+
+    function dateChange (event) {
+        const value = event.target.value;
+        setInputValue({
+            ...inputValue,
+            [event.target.name]: value
+        });
+        dispatch({type: inputValue.date});
+    }
+
     const handleSubmit = event => {
         document.getElementById('confirmation').style.display = 'flex';
         document.getElementById('form').style.display = 'none'
         event.preventDefault();
       }
-
-    function dateChange (event) {
-        handleChange(event);
-        dispatch({type: 'date_change'});
-    }
 
     return (
         <main>
@@ -41,7 +56,7 @@ function BookingForm ({times, dispatch}) {
             </p>
         </div>
         <form id="form" onSubmit={handleSubmit}>
-            <h2>Make reservation</h2>
+        <h2>Make reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-mail">E-mail</label>
