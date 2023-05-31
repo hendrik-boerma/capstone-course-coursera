@@ -1,4 +1,5 @@
 import headerImage from '../images/restaurant chef B.jpg'
+import './Header.css'
 
 function Header() {
 

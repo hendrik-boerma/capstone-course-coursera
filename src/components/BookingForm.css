@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 16px;
+    align-items: right;
+}
+
+input, select {
+    background-color: #EFEFEF;
+    color: #333333;
+    border: none;
+    padding: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+form input.button {
+    margin-top: 5%;
+}
+
+#confirmation {
+    display: none;
+    padding: 64px 0px;
+    max-width: 350px;
+    flex-direction: column;
+}
+
+#confirmation p{
+    padding: 24px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 64px;
+}

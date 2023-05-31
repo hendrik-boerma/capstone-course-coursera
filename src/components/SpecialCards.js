@@ -1,6 +1,7 @@
 import salad from '../images/greek salad.jpg'
 import bruchetta from '../images/bruchetta.png'
 import lemondessert from '../images/lemon dessert.jpg'
+import './SpecialCards.css'
 
 function SpecialCards() {
 

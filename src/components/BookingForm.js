@@ -1,4 +1,5 @@
 import { useState, useReducer } from "react";
+import './BookingForm.css'
 
 function BookingForm () {
 

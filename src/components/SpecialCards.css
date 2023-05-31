@@ -1,0 +1,60 @@
+
+.cardcontainer {
+    display: flex;
+    gap: 16px;
+    max-width: 900px;
+}
+
+.card {
+    background-color: #EFEFEF;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    color: #333333;
+}
+
+.card div {
+    padding: 16px;
+    display: grid;
+    grid-template-areas: 'title price' 'description description' 'link link';
+    align-items: center;
+    justify-items: space-between;
+}
+.cardimage {
+    width:100%;
+    height:100%;
+    max-height: 200px;
+    object-fit:cover;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.cardtitle {
+    grid-area: title;
+    margin: 0;
+}
+
+.cardprice {
+    grid-area: price;
+    text-align: right;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cardtext {
+    grid-area: description;
+}
+
+.cardlink {
+    color: #495E57;
+    grid-area: link;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 750px) {
+    .cardcontainer {
+        flex-direction: column;
+    }
+  }
