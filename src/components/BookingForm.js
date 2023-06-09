@@ -1,8 +1,13 @@
-import { useState, useReducer } from "react";
-import './BookingForm.css'
+import { useState } from "react";
+import './BookingForm.css';
 
-function BookingForm () {
+function BookingForm (props) {
 
+    const [finalTime, setFinalTime] = useState(
+        props.availableTimes.map((times) => <option>{times}</option>)
+      );
+
+    const [date, setDate] = useState("");
     let guests = ['','1','2','3','4','5','6','7','8'];
 
     const [inputValue, setInputValue] = useState({
@@ -13,26 +18,16 @@ function BookingForm () {
     }
     )
 
-    const initializeTimes = ['', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30'];
-
-    const updateTimes = (times, action) => {
-        if (action.type === "2023-05-01") {
-            return ['', '17:00', '17:30', '18:00']
-        }
-        else {
-            return initializeTimes;
-        }
-    }
-
-    const [times, dispatch] = useReducer(updateTimes, initializeTimes);
-
     const handleChange = event => {
         const value = event.target.value;
         setInputValue({
             ...inputValue,
             [event.target.name]: value
         });
-        dispatch({type: inputValue.date});
+
+        setDate(event.target.value);
+        props.updateTimes(date);
+        setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
     }
 
     const handleSubmit = event => {
@@ -61,9 +56,7 @@ function BookingForm () {
             <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" name='time' data-testid="timeoptions" value={inputValue.time} onChange={handleChange} required>
-                {times.map(time => (
-                        <option key={time}>{time}</option>
-                    ))}
+                {finalTime}
             </select>
             <label htmlFor="res-guests">Number of guests</label>
             <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange}  required>
