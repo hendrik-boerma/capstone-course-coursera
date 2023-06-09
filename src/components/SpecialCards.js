@@ -9,7 +9,7 @@ function SpecialCards() {
             <main>
                 <div className="title">
                     <h2>Specials</h2>
-                    <a href='/orderonline' className='button'>Online Menu</a>
+                    <a href='/menu' className='button'>Online Menu</a>
                 </div>
                 <div className="cardcontainer">
                     {dishes.map( dish => (
@@ -19,7 +19,7 @@ function SpecialCards() {
                             <h4 className='cardtitle' >{dish.name}</h4>
                             <p className="cardprice">$ {dish.price}</p>
                             <p className="cardtext">{dish.description}</p>
-                            <a href='/orderonline' className="cardlink">Order a delivery &gt;</a>
+                            <a href='/menu' className="cardlink">Watch menu &gt;</a>
                         </div>
                     </div>
                     ))
