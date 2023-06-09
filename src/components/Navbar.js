@@ -14,7 +14,7 @@ function Navbar () {
             <a href="/"><img src={logo} id='navlogo' alt="little lemon logo" /></a>
         </div>
       <ul id='openmenu' className={toggleMenu ? "navlist-mobile" : "navlist"} onClick={() => setToggleMenu(false)}>
-        <Link to="/" className="nav-item">HOME</Link>
+       <Link to="/" className="nav-item">HOME</Link>
         <Link to="/about" className="nav-item">ABOUT</Link>
         <Link to="/menu" className="nav-item">MENU</Link>
         <Link to="/reservations" className="nav-item">RESERVATIONS</Link>

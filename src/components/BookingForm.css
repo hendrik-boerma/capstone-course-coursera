@@ -34,3 +34,16 @@ form input.button {
     justify-content: left;
     gap: 64px;
 }
+
+.hidden-button {
+    background-color: #EFEFEF;
+    text-decoration: none;
+    color: #5e5e5e;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5%;
+}

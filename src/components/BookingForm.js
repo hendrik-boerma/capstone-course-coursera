@@ -3,20 +3,20 @@ import './BookingForm.css';
 
 function BookingForm (props) {
 
-    const [finalTime, setFinalTime] = useState(
-        props.availableTimes.map((times) => <option>{times}</option>)
-      );
-
-    const [date, setDate] = useState("");
-    let guests = ['','1','2','3','4','5','6','7','8'];
-
     const [inputValue, setInputValue] = useState({
         name: '',
+        mail: '',
         date: '',
         time: '',
         guests: ''
     }
     )
+
+    const [finalTime, setFinalTime] = useState(
+        props.availableTimes.map((times) => <option key={times}>{times}</option>)
+      );
+
+    let guests = ['','1','2','3','4','5','6','7','8'];
 
     const handleChange = event => {
         const value = event.target.value;
@@ -25,9 +25,11 @@ function BookingForm (props) {
             [event.target.name]: value
         });
 
-        setDate(event.target.value);
+        const stringify = event.target.value;
+        const date = new Date(stringify);
+
         props.updateTimes(date);
-        setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
+        setFinalTime(props.availableTimes.map((times) => <option key={times}>{times}</option>));
     }
 
     const handleSubmit = event => {
@@ -49,9 +51,9 @@ function BookingForm (props) {
         <form id="form" onSubmit={handleSubmit}>
         <h2>Make reservation</h2>
             <label htmlFor="res-name">Name</label>
-            <input  type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
+            <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-mail">E-mail</label>
-            <input type="email" id="res-mail" name='mail' onChange={handleChange} required />
+            <input type="email" id="res-mail" name='mail' value={inputValue.mail} onChange={handleChange} required />
             <label htmlFor="res-date" >Choose date</label>
             <input type="date" id="res-date" name='date' min="2023-01-01" max="2024-12-31" value={inputValue.date} onChange={handleChange} required/>
             <label htmlFor="res-time">Choose time</label>
@@ -64,7 +66,7 @@ function BookingForm (props) {
                     <option key={guest}>{guest}</option>
                 ))}
             </select>
-            <input className='button' type="submit" value="Book" />
+            <input className="button" type="submit" value="Book" />
         </form>
         </main>
     );

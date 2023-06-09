@@ -1,10 +1,25 @@
-function Menu () {
+import './Menu.css'
+import { foods } from '../Data.js'
 
-    return(
+function Menu() {
+
+    return (
         <>
-        <main>
-        <h1>hello world</h1>
-        </main>
+            <main>
+                <h2>Menu</h2>
+                <table>
+                    <tr>
+                        <th>Food</th>
+                        <th>Prices</th>
+                    </tr>
+                    {foods.map( food => (
+                    <tr>
+                        <td>{food.name}</td>
+                        <td>$ {food.price}</td>
+                    </tr>
+                    ))}
+                </table>
+            </main>
         </>
     );
 }
