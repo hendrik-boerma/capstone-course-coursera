@@ -4,6 +4,7 @@ import About from '../pages/About';
 import Menu from '../pages/Menu';
 import Reservations from '../pages/Reservations';
 import BookingPage from '../pages/BookingPage';
+import BookingConfirmation from "../pages/BookingConfirmation";
 
 function Routing () {
 
@@ -14,6 +15,7 @@ function Routing () {
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/reservations" element={<Reservations />}></Route>
         <Route path="/booking" element={<BookingPage/>}></Route>
+        <Route path="/confirmation" element={<BookingConfirmation />}></Route>
       </Routes>
     );
 }

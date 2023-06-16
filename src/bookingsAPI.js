@@ -25,5 +25,6 @@ export function fetchAPI(date) {
 }
 
 export function submitAPI(formData) {
+  console.log(formData)
   return true;
 }

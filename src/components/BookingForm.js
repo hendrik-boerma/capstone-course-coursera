@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { fetchAPI } from "../bookingsAPI";
 import './BookingForm.css';
 
 function BookingForm (props) {
@@ -13,8 +14,8 @@ function BookingForm (props) {
     )
 
     const [finalTime, setFinalTime] = useState(
-        props.availableTimes.map((times) => <option key={times}>{times}</option>)
-      );
+    props.availableTimes.map((times) => <option key={times}>{times}</option>)
+    );
 
     let guests = ['','1','2','3','4','5','6','7','8'];
 
@@ -25,30 +26,23 @@ function BookingForm (props) {
             [event.target.name]: value
         });
 
-        const stringify = event.target.value;
-        const date = new Date(stringify);
-
-        props.updateTimes(date);
-        setFinalTime(props.availableTimes.map((times) => <option key={times}>{times}</option>));
+        if (event.target.name === "date") {
+            dateChange(event)
+        }
     }
 
-    const handleSubmit = event => {
-        document.getElementById('confirmation').style.display = 'flex';
-        document.getElementById('form').style.display = 'none'
-        event.preventDefault();
-      }
+    const dateChange = event => {
+        const newDate = event.target.value;
+        props.updateTimes(fetchAPI(newDate));
+    }
+
+    useEffect(() => {
+        setFinalTime(props.availableTimes.map((times) => <option key={times}>{times}</option>));
+      }, [props.availableTimes])
 
     return (
         <main>
-        <div id="confirmation">
-            <h2 >Thank you for your reservation {inputValue.name}!</h2>
-            <p>
-                <span>Date: <br/>{inputValue.date}</span>
-                <span>Time: <br/>{inputValue.time}</span>
-                <span>Guests: <br/>{inputValue.guests}</span>
-            </p>
-        </div>
-        <form id="form" onSubmit={handleSubmit}>
+        <form id="form" onSubmit={props.submit}>
         <h2>Make reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>

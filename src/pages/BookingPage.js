@@ -1,17 +1,20 @@
 import BookingForm from "../components/BookingForm";
-import { useReducer } from "react";
-import {fetchAPI} from '../bookingsAPI';
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { submitAPI, fetchAPI } from "../bookingsAPI";
 
 function BookingPage() {
 
-    function updateTimes(date) {
-        return fetchAPI(date);
+    const [availableTimes, setAvailableTimes] = useState(fetchAPI(new Date()));
+    const navigate = useNavigate();
+    const handleSubmit = event => {
+        submitAPI()
+        navigate('/confirmation')
+        event.preventDefault();
       }
 
-    const [availableTimes, dispatch] = useReducer(updateTimes, fetchAPI(new Date()));
-
     return (
-        <BookingForm availableTimes={availableTimes} updateTimes={dispatch} />
+        <BookingForm availableTimes={availableTimes} updateTimes={setAvailableTimes} submit={handleSubmit} />
     );
 }
 
