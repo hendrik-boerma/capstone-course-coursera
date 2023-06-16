@@ -5,8 +5,9 @@ function BookingConfirmation() {
     return (
         <>
         <main>
-        <div>
-            <h2>Thank you for your reservation !</h2>
+        <div className='confirmation'>
+            <h3>Thank you for your reservation!</h3>
+            <a href='/' className='button'>Go to homepage</a>
         </div>
         </main>
         </>

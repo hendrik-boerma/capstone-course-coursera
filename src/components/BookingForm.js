@@ -5,6 +5,8 @@ import './BookingForm.css';
 
 function BookingForm (props) {
 
+    const [toggleButton, setToggleButton] = useState(false)
+
     const [inputValue, setInputValue] = useState({
         name: '',
         mail: '',
@@ -32,6 +34,16 @@ function BookingForm (props) {
         }
     }
 
+    useEffect(() => {
+        console.log(inputValue)
+            if(inputValue.name === "" || inputValue.mail === "" || inputValue.date === "" || inputValue.time === "" || inputValue.guests === "") {
+               setToggleButton(false)
+            } else {
+                setToggleButton(true)
+            }
+    }, [inputValue])
+
+
     const dateChange = event => {
         const newDate = event.target.value;
         props.updateTimes(fetchAPI(newDate));
@@ -53,7 +65,7 @@ function BookingForm (props) {
     return (
         <main>
         <form id="form" onSubmit={handleSubmit}>
-        <h2>Make reservation</h2>
+        <h2 data-testid="formtitle">Make reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
             <label htmlFor="res-mail">E-mail</label>
@@ -70,7 +82,7 @@ function BookingForm (props) {
                     <option key={guest}>{guest}</option>
                 ))}
             </select>
-            <input className="button" type="submit" value="Book" />
+            <input className={toggleButton ? "button" : "hidden-button"} type="submit" value="Book" />
         </form>
         </main>
     );
