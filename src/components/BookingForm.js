@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { fetchAPI } from "../bookingsAPI";
+import { useNavigate } from 'react-router-dom';
+import { submitAPI, fetchAPI } from "../bookingsAPI";
 import './BookingForm.css';
 
 function BookingForm (props) {
@@ -40,9 +41,18 @@ function BookingForm (props) {
         setFinalTime(props.availableTimes.map((times) => <option key={times}>{times}</option>));
       }, [props.availableTimes])
 
+    const navigate = useNavigate();
+
+    const handleSubmit = event => {
+        const formData = inputValue;
+        submitAPI(formData)
+        navigate('/confirmation')
+        event.preventDefault();
+      }
+
     return (
         <main>
-        <form id="form" onSubmit={props.submit}>
+        <form id="form" onSubmit={handleSubmit}>
         <h2>Make reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required/>
