@@ -1,7 +1,7 @@
 import '../components/BookingForm.css';
 
 function BookingConfirmation() {
-
+ 
     return (
         <>
         <main>

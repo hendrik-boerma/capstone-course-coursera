@@ -1,6 +1,5 @@
 table {
     margin: 40px 0 0 0;
-    padding: 5%;
     max-width: 95%;
     text-align: left;
     background-color: #efefef;
@@ -8,12 +7,17 @@ table {
 }
 
 th {
-    color: #495E57;
-    font-size: 1.5rem;
+    color: #efefef;
+    background-color: #495E57;
+    font-size: 1rem;
     padding: 1rem;
+    width: 70%;
 }
 
 td {
     padding: 1rem;
+    width: 50%;
+    background-color: #495E57;
+    color: #efefef;
 }
 

@@ -60,7 +60,7 @@ function BookingForm (props) {
     return (
         <main>
         <form id="form" onSubmit={handleSubmit}>
-        <h2 data-testid="formtitle">Make reservation</h2>
+        <h2 data-testid="formtitle">Make a reservation</h2>
             <label htmlFor="res-name">Name</label>
             <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required data-testid="name-element"/>
             <label htmlFor="res-mail">E-mail</label>
@@ -72,7 +72,7 @@ function BookingForm (props) {
                 {finalTime}
             </select>
             <label htmlFor="res-guests">Number of guests</label>
-            <select placeholder='' id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange}  required data-testid="guests-element">
+            <select id="res-guests" name='guests' value={inputValue.guests} onChange={handleChange}  required data-testid="guests-element">
                 {guests.map(guest => (
                     <option key={guest}>{guest}</option>
                 ))}
