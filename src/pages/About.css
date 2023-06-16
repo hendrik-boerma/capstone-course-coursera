@@ -1,0 +1,9 @@
+.about {
+    margin: 40px 0 0 0;
+    padding: 5%;
+    width: 800px;
+    max-width: 95%;
+    text-align: left;
+    background-color: #efefef;
+    line-height: 3rem;
+}

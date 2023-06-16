@@ -35,6 +35,13 @@ nav {
     color: #495E57;
     font-size: 16px;
     font-weight: 600;
+    padding: 6px;
+}
+
+.nav-item:hover {
+    background-color: #495E57;
+    border-radius: 4px;
+    color: #EFEFEF;
 }
 
 #hamburger {
