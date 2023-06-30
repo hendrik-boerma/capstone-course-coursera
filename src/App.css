@@ -7,7 +7,6 @@ main {
 }
 
 main .title {
-    padding: 16px;
     width: 100%;
     max-width: 900px;
     display: flex;
@@ -24,9 +23,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 1.5rem;
     color:#333333;
+    text-align: center;
 }
 
 h3 {
@@ -35,11 +34,16 @@ h3 {
     margin: 0;
 }
 
+
+p {
+    line-height: 2rem;
+}
+
 .button {
     background-color: #F4CE14;
     text-decoration: none;
     color: #333333;
-    padding: 16px 30px;
+    padding: 1rem 1.5rem;
     border: none;
     border-radius: 8px;
     font-size: 1rem;

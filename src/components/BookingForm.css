@@ -6,6 +6,7 @@ form {
     gap: 16px;
     align-items: right;
     height: 100%;
+    margin-top: 1rem;
 }
 
 input, select {

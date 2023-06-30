@@ -59,8 +59,8 @@ function BookingForm (props) {
 
     return (
         <main>
-        <form id="form" onSubmit={handleSubmit}>
         <h2 data-testid="formtitle">Make a reservation</h2>
+        <form id="form" onSubmit={handleSubmit}>
             <label htmlFor="res-name">Name</label>
             <input type="text" id="res-name" name='name' value={inputValue.name} onChange={handleChange} required data-testid="name-element"/>
             <label htmlFor="res-mail">E-mail</label>

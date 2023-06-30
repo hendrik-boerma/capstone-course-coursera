@@ -1,5 +1,5 @@
 import './Menu.css'
-import { foods } from '../Data.js'
+import { dishes } from '../Data.js'
 
 function Menu() {
 
@@ -12,10 +12,12 @@ function Menu() {
                         <th>Food</th>
                         <th>Prices</th>
                     </tr>
-                    {foods.map( food => (
+                    {dishes.map( dish => (
                     <tr>
-                        <td>{food.name}</td>
-                        <td>$ {food.price}</td>
+                        <td>{dish.name}
+                            <span>{dish.description}</span>
+                        </td>
+                        <td>$ {dish.price}</td>
                     </tr>
                     ))}
                 </table>

@@ -10,9 +10,8 @@ function Footer() {
             <a href='/'><img src={logo} alt='little lemon logo' /></a>
             <div>
                 <h4>Contact</h4>
-                <p>Adress</p>
-                <p>Phone number</p>
-                <p>Email</p>
+                <p>331 North Street <br></br> London E24 8QB</p>
+                <p>info@littlelemon.com</p>
             </div>
             <div>
             <h4>Social media</h4>

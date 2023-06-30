@@ -1,23 +1,28 @@
 table {
-    margin: 40px 0 0 0;
+    margin: 1rem 0 0 0;
     max-width: 95%;
+    border-radius: 4px;
     text-align: left;
-    background-color: #efefef;
-    line-height: 3rem;
 }
 
 th {
-    color: #efefef;
-    background-color: #495E57;
+    color: #495E57;
+    background-color: #EFEFEF;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     width: 70%;
 }
 
 td {
     padding: 1rem;
     width: 50%;
-    background-color: #495E57;
-    color: #efefef;
+    color: #495E57;
+    font-size: 1rem;
+}
+
+span {
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 5%;
 }
 
