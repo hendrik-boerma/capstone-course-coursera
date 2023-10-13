@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/capstone-course-coursera/static/css/main.205e5408.css",
-    "main.js": "/capstone-course-coursera/static/js/main.6529a850.js",
-    "static/js/787.505cc4c5.chunk.js": "/capstone-course-coursera/static/js/787.505cc4c5.chunk.js",
-    "static/media/bruchetta.jpeg": "/capstone-course-coursera/static/media/bruchetta.6f51ed243117bebb2d12.jpeg",
-    "static/media/restaurant chef B.jpg": "/capstone-course-coursera/static/media/restaurant chef B.0173ed674438ddb385d4.jpg",
-    "static/media/greek salad.jpg": "/capstone-course-coursera/static/media/greek salad.41cb65093dacb7f2600b.jpg",
-    "static/media/Logo.svg": "/capstone-course-coursera/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
-    "index.html": "/capstone-course-coursera/index.html",
-    "main.205e5408.css.map": "/capstone-course-coursera/static/css/main.205e5408.css.map",
-    "main.6529a850.js.map": "/capstone-course-coursera/static/js/main.6529a850.js.map",
-    "787.505cc4c5.chunk.js.map": "/capstone-course-coursera/static/js/787.505cc4c5.chunk.js.map"
+    "main.css": "/static/css/main.205e5408.css",
+    "main.js": "/static/js/main.a39d76ae.js",
+    "static/js/787.505cc4c5.chunk.js": "/static/js/787.505cc4c5.chunk.js",
+    "static/media/bruchetta.jpeg": "/static/media/bruchetta.6f51ed243117bebb2d12.jpeg",
+    "static/media/restaurant chef B.jpg": "/static/media/restaurant chef B.0173ed674438ddb385d4.jpg",
+    "static/media/greek salad.jpg": "/static/media/greek salad.41cb65093dacb7f2600b.jpg",
+    "static/media/Logo.svg": "/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "index.html": "/index.html",
+    "main.205e5408.css.map": "/static/css/main.205e5408.css.map",
+    "main.a39d76ae.js.map": "/static/js/main.a39d76ae.js.map",
+    "787.505cc4c5.chunk.js.map": "/static/js/787.505cc4c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.205e5408.css",
-    "static/js/main.6529a850.js"
+    "static/js/main.a39d76ae.js"
   ]
 }
