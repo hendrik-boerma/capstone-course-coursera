@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter  } from "react-router-dom";
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Menu from '../pages/Menu';
@@ -8,6 +8,7 @@ import BookingConfirmation from "../pages/BookingConfirmation";
 function Routing () {
 
     return (
+      <HashRouter>
         <Routes basename="/capstone-course-coursera">
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
@@ -15,6 +16,7 @@ function Routing () {
         <Route path="/booking" element={<BookingPage/>}></Route>
         <Route path="/confirmation" element={<BookingConfirmation />}></Route>
       </Routes>
+      </HashRouter>
     );
 }
 
