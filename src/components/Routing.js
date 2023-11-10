@@ -8,8 +8,8 @@ import BookingConfirmation from "../pages/BookingConfirmation";
 function Routing () {
 
     return (
-        <Routes basename="/capstone-course-coursera">
-        <Route path="/" element={<Home />}></Route>
+        <Routes basename="/capstone-course-coursera/">
+        <Route path="/capstone-course-coursera/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/booking" element={<BookingPage/>}></Route>
