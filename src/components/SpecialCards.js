@@ -10,7 +10,7 @@ function SpecialCards() {
             <main>
                 <div className="title">
                     <h2>Specials</h2>
-                    <a href='/capstone-course-coursera/menu' className='button'>Online Menu</a>
+                    <Link to='/menu' className='button'>Online Menu</Link>
                 </div>
                 <div className="cardcontainer">
                     {dishes.map( dish => (
