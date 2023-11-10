@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { submitAPI, fetchAPI } from "../bookingsAPI";
 import './BookingForm.css';
+import { Link } from "react-router-dom";
 
 function BookingForm (props) {
 
@@ -53,7 +54,6 @@ function BookingForm (props) {
     const handleSubmit = event => {
         const formData = inputValue;
         submitAPI(formData)
-        window.location.to = "/confirmation"
         event.preventDefault();
       }
 
@@ -77,7 +77,7 @@ function BookingForm (props) {
                     <option key={guest}>{guest}</option>
                 ))}
             </select>
-            <input className={toggleButton ? "button" : "hidden-button"} type="submit" value="Book" data-testid="submit-element"/>
+            <Link to={toggleButton ? "/confirmation" : ""} className={toggleButton ? "button" : "hidden-button"} type="submit" value="Book" data-testid="submit-element">Book</Link>
         </form>
         </main>
     );

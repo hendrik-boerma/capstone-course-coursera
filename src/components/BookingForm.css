@@ -25,6 +25,10 @@ form input.button {
     margin-top: 5%;
 }
 
+.button {
+    text-align: center;
+    cursor: pointer;
+}
 .hidden-button {
     background-color: #EFEFEF;
     text-decoration: none;
@@ -36,6 +40,8 @@ form input.button {
     font-weight: 600;
     display: inline-block;
     margin-top: 5%;
+    text-align: center;
+    cursor: default;
 }
 
 .confirmation {
