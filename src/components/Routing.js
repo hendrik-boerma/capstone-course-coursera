@@ -10,10 +10,10 @@ function Routing () {
     return (
         <Routes basename="/capstone-course-coursera/">
         <Route path="/capstone-course-coursera/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/booking" element={<BookingPage/>}></Route>
-        <Route path="/confirmation" element={<BookingConfirmation />}></Route>
+        <Route path="/capstone-course-coursera/about" element={<About />}></Route>
+        <Route path="/capstone-course-coursera/menu" element={<Menu />}></Route>
+        <Route path="/capstone-course-coursera/booking" element={<BookingPage/>}></Route>
+        <Route path="/capstone-course-coursera/confirmation" element={<BookingConfirmation />}></Route>
       </Routes>
     );
 }
