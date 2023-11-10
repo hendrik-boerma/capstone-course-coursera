@@ -1,5 +1,6 @@
 import './SpecialCards.css'
 import { dishes } from '../Data'
+import { Link } from "react-router-dom";
 
 function SpecialCards() {
 
@@ -19,7 +20,7 @@ function SpecialCards() {
                             <h4 className='cardtitle' >{dish.name}</h4>
                             <p className="cardprice">$ {dish.price}</p>
                             <p className="cardtext">{dish.description}</p>
-                            <a href='/capstone-course-coursera/menu' className="cardlink">Watch menu &gt;</a>
+                            <Link to="/menu" className="cardlink">Watch menu &gt;</Link>
                         </div>
                     </div>
                     ))

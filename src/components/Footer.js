@@ -1,5 +1,6 @@
 import logo from '../images/Logo.svg'
 import './Footer.css'
+import { Link } from "react-router-dom";
 
 function Footer() {
 
@@ -7,7 +8,7 @@ function Footer() {
         <>
         <footer>
             <div className='container'>
-            <a href='/capstone-course-coursera/'><img src={logo} alt='little lemon logo' /></a>
+            <Link to='/'><img src={logo} alt='little lemon logo' /></Link>
             <div>
                 <h4>Contact</h4>
                 <p>331 North Street <br></br> London E24 8QB</p>
