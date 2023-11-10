@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Menu from '../pages/Menu';
@@ -9,11 +9,11 @@ function Routing () {
 
     return (
       <Routes basename="/capstone-course-coursera">
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/booking" element={<BookingPage/>}></Route>
-        <Route path="/confirmation" element={<BookingConfirmation />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/booking" element={<BookingPage/>} />
+        <Route path="/confirmation" element={<BookingConfirmation />} />
       </Routes>
     );
 }
