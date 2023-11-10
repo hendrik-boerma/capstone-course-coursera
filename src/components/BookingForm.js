@@ -53,7 +53,7 @@ function BookingForm (props) {
     const handleSubmit = event => {
         const formData = inputValue;
         submitAPI(formData)
-        window.location.href = "/confirmation"
+        window.location.href = "/capstone-course-coursera/confirmation/"
         event.preventDefault();
       }
 
