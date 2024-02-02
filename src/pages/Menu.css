@@ -1,16 +1,18 @@
 table {
     margin: 1rem 0 0 0;
+    width: 24rem;
     max-width: 95%;
     border-radius: 4px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
+    text-align: center;
     color: #495E57;
-    background-color: #EFEFEF;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     width: 70%;
+    border-bottom: 1px solid #495E57; 
 }
 
 td {
@@ -23,6 +25,6 @@ td {
 span {
     font-size: 0.75rem;
     display: block;
-    margin-top: 5%;
+    margin-top: 1rem;
 }
 

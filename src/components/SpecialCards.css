@@ -1,7 +1,7 @@
 
 .cardcontainer {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     max-width: 900px;
 }
 
@@ -12,15 +12,20 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    color: #333333;
+    color: #495E57;
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(0.95);
 }
 
 .card div {
-    padding: 16px;
+    padding: 1rem;
     display: grid;
     grid-template-areas: 'title price' 'description description' 'link link';
-    align-items: center;
-    justify-items: space-between;
+    grid-template-rows: 2rem 3rem 3rem;
+    align-items: start;
 }
 .cardimage {
     width:100%;
@@ -38,12 +43,15 @@
 .cardprice {
     grid-area: price;
     text-align: right;
-    font-weight: 600;
+    line-height: 1.2;
     margin: 0;
 }
 
 .cardtext {
     grid-area: description;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 .cardlink {

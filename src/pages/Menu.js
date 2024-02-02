@@ -2,6 +2,9 @@ import './Menu.css'
 import { dishes } from '../Data.js'
 
 function Menu() {
+    const starters = dishes.filter((dish) => dish.category === 'starter');
+    const mains = dishes.filter((dish) => dish.category === 'main');
+    const desserts = dishes.filter((dish) => dish.category === 'dessert');
 
     return (
         <>
@@ -9,17 +12,38 @@ function Menu() {
                 <h2>Menu</h2>
                 <table>
                     <tr>
-                        <th>Food</th>
-                        <th>Prices</th>
+                        <th>Starters</th>
                     </tr>
-                    {dishes.map( dish => (
+                    {starters.map( dish => (
                     <tr>
-                        <td>{dish.name}
+                        <td>{dish.name} - {dish.price}
                             <span>{dish.description}</span>
                         </td>
-                        <td>$ {dish.price}</td>
                     </tr>
                     ))}
+
+                    <tr>
+                        <th>Main</th>
+                    </tr>
+                    {mains.map( dish => (
+                    <tr>
+                    <td>{dish.name} - {dish.price}
+                        <span>{dish.description}</span>
+                    </td>
+                </tr>
+                    ))}
+
+                    <tr>
+                        <th>Dessert</th>
+                    </tr>
+                    {desserts.map( dish => (
+                    <tr>
+                    <td>{dish.name} - {dish.price}
+                        <span>{dish.description}</span>
+                    </td>
+                </tr>
+                    ))}
+                    
                 </table>
             </main>
         </>
