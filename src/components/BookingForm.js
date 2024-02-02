@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function BookingForm (props) {
 
     const [toggleButton, setToggleButton] = useState(false)
+    const [emailValidation, setEmailValidation]  = useState(false)
 
     const [inputValue, setInputValue] = useState({
         name: '',
@@ -22,6 +23,7 @@ function BookingForm (props) {
 
     const handleChange = event => {
         const value = event.target.value;
+
         setInputValue({
             ...inputValue,
             [event.target.name]: value
@@ -30,22 +32,35 @@ function BookingForm (props) {
         if (event.target.name === "date") {
             dateChange(event)
         }
+
+        if (event.target.name === "mail") {
+            validateMail(event)
+        }
+
     }
 
     useEffect(() => {
         console.log(inputValue)
-            if(inputValue.name === "" || inputValue.mail === "" || inputValue.date === "" || inputValue.time === "" || inputValue.guests === "") {
+            if(inputValue.name === "" || inputValue.mail === "" || inputValue.date === "" || inputValue.time === "" || inputValue.guests === "" || emailValidation === false) {
                setToggleButton(false)
             } else {
                 setToggleButton(true)
             }
-    }, [inputValue])
-
+    }, [emailValidation, inputValue])
 
     const dateChange = event => {
         const newDate = event.target.value;
         props.updateTimes(fetchAPI(newDate));
     }
+
+    const validateMail = (event) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        const isValidEmail = emailRegex.test(event.target.value);
+    
+        setEmailValidation(isValidEmail);
+    };
+
 
     useEffect(() => {
         setFinalTime(props.availableTimes?.map((times) => <option key={times}>{times}</option>));
