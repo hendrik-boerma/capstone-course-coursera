@@ -26,6 +26,5 @@ export function fetchAPI(date) {
 
 export function submitAPI(formData) {
   let result = formData.name;
-  console.log(result)
   return result;
 }

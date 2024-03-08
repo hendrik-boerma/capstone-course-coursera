@@ -40,7 +40,14 @@ function BookingForm (props) {
     }
 
     useEffect(() => {
-        console.log(inputValue)
+        setInputValue(prevInputValue => ({
+            ...prevInputValue,
+            time: ''
+        }));
+    }, [inputValue.date]);
+    
+
+    useEffect(() => {
             if(inputValue.name === "" || inputValue.mail === "" || inputValue.date === "" || inputValue.time === "" || inputValue.guests === "" || emailValidation === false) {
                setToggleButton(false)
             } else {

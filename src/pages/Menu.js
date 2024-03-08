@@ -1,5 +1,5 @@
-import './Menu.css'
-import { dishes } from '../Data.js'
+import './Menu.css';
+import { dishes } from '../Data.js';
 
 function Menu() {
     const starters = dishes.filter((dish) => dish.category === 'starter');
@@ -7,46 +7,49 @@ function Menu() {
     const desserts = dishes.filter((dish) => dish.category === 'dessert');
 
     return (
-        <>
-            <main>
-                <h2>Menu</h2>
-                <table>
+        <main>
+            <h2>Menu</h2>
+            <table>
+                <tbody>
                     <tr>
                         <th>Starters</th>
                     </tr>
-                    {starters.map( dish => (
-                    <tr>
-                        <td>{dish.name} - {dish.price}
-                            <span>{dish.description}</span>
-                        </td>
-                    </tr>
+                    {starters.map((dish, index) => (
+                        <tr key={index}>
+                            <td>{dish.name} - {dish.price}
+                                <span>{dish.description}</span>
+                            </td>
+                        </tr>
                     ))}
+                </tbody>
 
+                <tbody>
                     <tr>
                         <th>Main</th>
                     </tr>
-                    {mains.map( dish => (
-                    <tr>
-                    <td>{dish.name} - {dish.price}
-                        <span>{dish.description}</span>
-                    </td>
-                </tr>
+                    {mains.map((dish, index) => (
+                        <tr key={index}>
+                            <td>{dish.name} - {dish.price}
+                                <span>{dish.description}</span>
+                            </td>
+                        </tr>
                     ))}
+                </tbody>
 
+                <tbody>
                     <tr>
                         <th>Dessert</th>
                     </tr>
-                    {desserts.map( dish => (
-                    <tr>
-                    <td>{dish.name} - {dish.price}
-                        <span>{dish.description}</span>
-                    </td>
-                </tr>
+                    {desserts.map((dish, index) => (
+                        <tr key={index}>
+                            <td>{dish.name} - {dish.price}
+                                <span>{dish.description}</span>
+                            </td>
+                        </tr>
                     ))}
-                    
-                </table>
-            </main>
-        </>
+                </tbody>
+            </table>
+        </main>
     );
 }
 

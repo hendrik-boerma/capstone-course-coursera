@@ -2,7 +2,7 @@ import '../components/BookingForm.css';
 import { Link } from "react-router-dom";
 
 function BookingConfirmation() {
- 
+
     return (
         <>
         <main>

@@ -25,9 +25,6 @@ function Navbar() {
         className={toggleMenu ? "navlist-mobile" : "navlist"}
         onClick={() => setToggleMenu(false)}
       >
-        <Link to="/" className="nav-item">
-          Home
-        </Link>
         <Link to="/about" className="nav-item">
           About
         </Link>
