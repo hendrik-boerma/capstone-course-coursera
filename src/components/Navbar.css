@@ -64,6 +64,9 @@ nav {
         flex-direction: column;
         align-items: normal;
         padding: 16px 0px;
+        width: 100%;
+        position: fixed;
+        top: 0;
     }
 
     .navheader {
@@ -75,11 +78,12 @@ nav {
     }
 
     .navlist-mobile {
-        position: absolute;
+        position: fixed;
         margin-top: 76px;
         list-style-type: none;
         gap: 32px;
         width: 100%;
+        height: 100vh;
         box-sizing: border-box;
         padding: 32px 16px;
         flex-direction: column;

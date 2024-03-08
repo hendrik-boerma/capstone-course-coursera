@@ -55,3 +55,10 @@ p {
 .button:hover {
     background-color: #EDA337;
 }
+
+@media screen and (max-width: 750px) {
+   
+    main {
+        margin-top: 82px;
+    }
+}

@@ -32,5 +32,6 @@ header img {
     header {
         grid-template-areas: 'image' 'article';
         height: auto;
+        margin-top: 82px;
     }
 }
