@@ -17,7 +17,7 @@ function Navbar() {
           {toggleMenu ? "Close" : "Menu"}
         </button>
         <Link to="/">
-          <img src={logo} id="navlogo" alt="little lemon logo" />
+          <img src={logo} id="navlogo" alt="little lemon logo" onClick={() => setToggleMenu(false)} />
         </Link>
       </div>
       <ul
