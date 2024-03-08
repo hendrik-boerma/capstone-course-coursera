@@ -63,8 +63,15 @@ function BookingForm (props) {
 
 
     useEffect(() => {
-        setFinalTime(props.availableTimes?.map((times) => <option key={times}>{times}</option>));
-      }, [props.availableTimes])
+        if (props.availableTimes) {
+          const options = [
+            <option key="default"></option>,
+            ...props.availableTimes.map((times) => <option key={times}>{times}</option>)
+          ];
+      
+          setFinalTime(options);
+        }
+      }, [props.availableTimes]);
 
     const handleSubmit = event => {
         const formData = inputValue;
