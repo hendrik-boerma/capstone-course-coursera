@@ -1,5 +1,5 @@
 import salad from './images/greek salad.jpg'
-import bruchetta from './images/bruchetta.jpeg'
+import bruschetta from './images/bruchetta.jpeg'
 import lemondessert from './images/lemon dessert.jpg'
 
 export const dishes = [
@@ -11,10 +11,10 @@ export const dishes = [
         category: 'starter'
     },
     {
-        name: 'Bruchetta',
+        name: 'Bruschetta',
         price: '8',
         description: 'Toast with tomato, balsamico and basil',
-        picture: bruchetta,
+        picture: bruschetta,
         category: 'starter'
     },
     {
