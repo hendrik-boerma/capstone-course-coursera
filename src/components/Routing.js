@@ -18,7 +18,7 @@ function Routing () {
   }, [location.pathname]);
 
     return (
-      <Routes basename="/">
+      <Routes basename="/capstone-course-coursera">
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
