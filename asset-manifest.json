@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/capstone-course-coursera/static/css/main.43b353bd.css",
-    "main.js": "/capstone-course-coursera/static/js/main.53a14a28.js",
+    "main.js": "/capstone-course-coursera/static/js/main.cce119a8.js",
     "static/js/787.505cc4c5.chunk.js": "/capstone-course-coursera/static/js/787.505cc4c5.chunk.js",
     "static/media/bruchetta.jpeg": "/capstone-course-coursera/static/media/bruchetta.6f51ed243117bebb2d12.jpeg",
     "static/media/restaurant chef B.jpg": "/capstone-course-coursera/static/media/restaurant chef B.0173ed674438ddb385d4.jpg",
@@ -9,11 +9,11 @@
     "static/media/Logo.svg": "/capstone-course-coursera/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
     "index.html": "/capstone-course-coursera/index.html",
     "main.43b353bd.css.map": "/capstone-course-coursera/static/css/main.43b353bd.css.map",
-    "main.53a14a28.js.map": "/capstone-course-coursera/static/js/main.53a14a28.js.map",
+    "main.cce119a8.js.map": "/capstone-course-coursera/static/js/main.cce119a8.js.map",
     "787.505cc4c5.chunk.js.map": "/capstone-course-coursera/static/js/787.505cc4c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43b353bd.css",
-    "static/js/main.53a14a28.js"
+    "static/js/main.cce119a8.js"
   ]
 }
